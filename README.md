@@ -2,17 +2,17 @@
 
 
 # Master image (Execute inside master folder)
-- sudo docker build -t gcr.io/plenary-ridge-120302/jenkins-master image/
+- sudo docker build -t gcr.io/plenary-ridge-120302/jenkins-master master/image/
 - sudo gcloud docker push gcr.io/plenary-ridge-120302/jenkins-master
 
 # Create the pod
-- kubectl create -f pod_config.json
+- kubectl create -f master/pod_config.yaml
 
 # Create the replication controller
-kubectl create -f replication_controller_config.json
+kubectl create -f master/replication_controller_config.yaml
 
 # Create the service
-kubectl create -f service_config.json
+kubectl create -f master/service_config.yaml
 
 # Describe the service
 kubectl services describe jenkins
@@ -22,7 +22,7 @@ kubectl services describe jenkins
 
 
 # Slave image (Execute inside slave folder)
-- sudo docker build -t gcr.io/plenary-ridge-120302/jenkins-cloud-sdk-slave slave/
+- sudo docker build -t gcr.io/plenary-ridge-120302/jenkins-cloud-sdk-slave slave/image/
 - sudo gcloud docker push gcr.io/plenary-ridge-120302/jenkins-cloud-sdk-slave
 
 
