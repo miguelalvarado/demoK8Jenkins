@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="swarm-client1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../jenkernetes/setup/slave/image/swarm-client.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
